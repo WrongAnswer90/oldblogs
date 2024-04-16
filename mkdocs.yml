@@ -97,4 +97,9 @@ extra_css:
 nav: 
   - Home: index.md
   - 缺省源: 缺省源/缺省源.md
-  - Poly: Poly/Poly.md
+  - 数学:
+    - 多项式: Math/poly/poly.md
+    - 数论:
+      - 最大公约数($\gcd$):
+        - 值域处理: Math/number theory/gcd/prework.md
+        - $\text{binary gcd}$: Math/number theory/gcd/binary.md
