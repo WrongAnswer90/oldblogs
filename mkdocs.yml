@@ -96,5 +96,5 @@ extra_css:
 
 nav: 
   - Home: index.md
-  - 缺省源/缺省源.md
-  - Poly/Poly.md
+  - 缺省源: 缺省源/缺省源.md
+  - Poly: Poly/Poly.md
