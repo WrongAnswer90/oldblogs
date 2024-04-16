@@ -93,3 +93,8 @@ extra_javascript:
 
 extra_css:
   - 'static/css/extra.css?v=14'
+
+nav: 
+  - Home: 
+    - 开始: index.md
+    - 缺省源： 缺省源.md
