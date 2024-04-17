@@ -101,73 +101,15 @@ nav:
     - 多项式:
       - 多项式: Math/Poly/poly.md
       - 拉格朗日插值: Math/Poly/interpolation.md
-      - 集合幂级数:
-        - FWT: Math/Poly/FWT.md
-        - 子集卷积: Math/Poly/subset.md
+      - 集合幂级数: Math/Poly/FWT.md
     - 数论:
-      - 最大公约数(gcd):
-        - 值域处理: Math/number theory/gcd/prework.md
-        - binary gcd: Math/number theory/gcd/binary.md
-        - exgcd: 
+      - 最大公约数(gcd): Math/number theory/gcd.md
       - Miller-Rabin: Math/number theory/millerrabin.md
       - Pollard-Rho: Math/number theory/pollardrho.md
-      - BSGS:
-        - BSGS: 
-        - exBSGS:
-      - 扩展中国剩余定理(exCRT):
-      - 原根: 
-      - 筛法:
-        - 杜教筛:
-        - Min-25 筛:
-      - dirichlet 前缀和:
-      - mobius 反演:
-    - 线性代数:
-      - 行列式:
-        - 行列式求值:
-        - LGV 引理:
-        - Best 定理:
-        - Matrix-tree 定理:
-      - 高斯消元:
-      - 矩阵求逆:
-    - 组合数学:
-      - Lucas 定理:
-      - exLucas 定理:
-    - 排列置换相关:
-      - Polya 定理:
-      - prufer 序:
-  - 字符串:
-    - manacher:
-    - 后缀数组(SA):
-    - 后缀自动机(SAM):
-    - 广义后缀自动机(GSAM):
-    - AC 自动机(ACAM):
-    - KMP:
-    - exKMP:
-    - 子序列自动机:
-  - 图论:
-    - 欧拉路:
-    - dfs 序 LCA:
-    - 流:
-      - 最大流:
-      - 费用流:
-    - KM 算法:
-    - 连通性:
-      - 点双联通分量(圆方树):
-      - 边双联通分量:
-      - 强连通分量:
-    - 最短路:
-      - dijkstra:
-      - SPFA:
-    - 最小生成树:
-    - 树哈希:
-  - 数据结构:
-    - 线段树:
-      - 线段树:
-      - 李超树:
-      - 可持久化线段树:
-    - 平衡树:
-      - Splay:
-      - FHQ treap:
-      - 可持久化平衡树:
-    - LCT:
-    - 点分树:
+      - BSGS: Math/number theory/BSGS.md
+      - 中国剩余定理(exCRT): Math/number theory/CRT.md
+      - 原根: Math/number theory/genshin.md
+      - 筛法: 
+        - 杜教筛: Math/number theory/dusieve.md
+        - Min-25 筛: Math/number theory/min25sieve.md
+      - 前缀和与反演: Math/number theory/oper.md

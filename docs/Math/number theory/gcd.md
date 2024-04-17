@@ -1,6 +1,20 @@
+## Binary GCD
+
+```cpp
+inline int gcd(int a,int b)
+{
+	int az=__builtin_ctz(a),bz=__builtin_ctz(b);
+	int z=min(az,bz),tmp;b>>=bz;
+	while(a)a>>=az,tmp=a-b,az=__builtin_ctz(tmp),b=min(a,b),a=abs(tmp);
+	return b<<z;
+}
+```
+
+## 值域预处理 GCD
+
 ```cpp
 bitset<1000010> v;
-int n,cnt,ans,f[1000010][3],c[1010][1010],pr[300010],a[5010],b[5010];
+int cnt,ans,f[1000010][3],c[1010][1010],pr[300010];
 inline int gcd(int x,int y)
 {
 	int ans=1;
@@ -29,15 +43,5 @@ inline void mian()
 	}
 	for(int i=1;i<=1000;++i)c[i][0]=c[0][i]=i;
 	for(int i=1;i<=1000;++i)for(int j=1;j<=i;++j)c[i][j]=c[j][i]=c[j][i%j];
-	read(n);
-	for(int i=1;i<=n;++i)read(a[i]);
-	for(int i=1;i<=n;++i)read(b[i]);
-	for(int i=1;i<=n;++i)
-	{
-		ans=0;
-		for(int j=1,nw=i;j<=n;++j,Mmul(nw,i))
-		Madd(ans,Cmul(nw,gcd(a[i],b[j])));
-		write(ans,'\n');
-	}
 }
 ```
