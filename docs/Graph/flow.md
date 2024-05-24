@@ -1,8 +1,9 @@
 ## 最大流
 
 ```cpp
-int S,T,cnt=1,n,m,head[201],to[10001],nex[10001],v[10001],d[201],now[201];
-inline void add(int x,int y,int z){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt,v[cnt]=z;}
+int S,T,cnt=1,head[1210],to[100010],nex[100010],v[100010],d[1210],now[1210];
+inline void Add(int x,int y,int z){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt,v[cnt]=z;}
+inline void add(int x,int y,int z){Add(x,y,z),Add(y,x,0);}
 queue<int> q;
 int bfs()
 {
@@ -41,7 +42,7 @@ int dinic(int k,int flow)
 ## 费用流
 
 ```cpp
-int cnt=1,n,m,S,T,sum,ans,incf[5010],pre[5010],d[5010],h[5010],head[5010],to[100010],nex[100010],v[100010],c[100010];
+int cnt=1,S,T,sum,ans,incf[5010],pre[5010],d[5010],h[5010],head[5010],to[100010],nex[100010],v[100010],c[100010];
 inline void Add(int x,int y,int z,int t){to[++cnt]=y,v[cnt]=z,nex[cnt]=head[x],c[cnt]=t,head[x]=cnt;}
 inline void add(int x,int y,int z,int t){Add(x,y,z,t),Add(y,x,0,-t);}
 priority_queue<pii> q;
