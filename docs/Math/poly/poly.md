@@ -31,7 +31,7 @@ namespace Poly
 	inline int inv(int x){return x<=MAXN?Invn[x]:power(x,MOD-2);}
 	inline void NTT(vi&A,int n,int opt)
 	{
-		static ull B[MAXN*4+10],iv=power(n,MOD-2);A.resize(n);
+		static ull B[MAXN*4+10];ull iv=power(n,MOD-2);A.resize(n);
 		for(int i=0;i<n;++i)B[i]=A[R[i]];
 		for(int mid=1;mid<n;mid<<=1)
 		{
