@@ -1,5 +1,5 @@
 ﻿site_name: My Blogs
-site_url: https://wronganswer91.github.io
+site_url: https://wronganswer90.github.io
 site_author: WrongAnswer90
 strict: false
 
@@ -36,8 +36,8 @@ theme:
     code: 'Fira Mono'
 
 edit_uri: edit/main/docs
-repo_url: https://github.com/WrongAnswer90/WrongAnswer91.github.io
-repo_name: WrongAnswer91.github.io
+repo_url: https://github.com/WrongAnswer90/WrongAnswer90.github.io
+repo_name: WrongAnswer90.github.io
 
 copyright: Copyright &copy; 2023 WrongAnswer90
 
@@ -48,7 +48,7 @@ extra:
   generator: true
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/WrongAnswer91
+      link: https://github.com/WrongAnswer90
     - icon: fontawesome/solid/paper-plane
       link: mailto:<wangyice1537@163.com>
 
