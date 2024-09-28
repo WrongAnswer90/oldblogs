@@ -1,5 +1,5 @@
 ﻿site_name: My Blogs
-site_url: https://wronganswer90.github.io
+site_url: https://wronganswer90.github.io/oldblogs
 site_author: WrongAnswer90
 strict: false
 
@@ -36,8 +36,8 @@ theme:
     code: 'Fira Mono'
 
 edit_uri: edit/main/docs
-repo_url: https://github.com/WrongAnswer90/WrongAnswer90.github.io
-repo_name: WrongAnswer90.github.io
+repo_url: https://github.com/WrongAnswer90/WrongAnswer90.github.io/oldblogs
+repo_name: oldblogs
 
 copyright: Copyright &copy; 2023 WrongAnswer90
 
