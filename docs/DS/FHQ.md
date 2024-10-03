@@ -1,3 +1,5 @@
+abababababa
+
 ```cpp
 struct Node{int l,r,size,rd,val,tag;}fhq[200001];
 int n,cnt,m,root;
