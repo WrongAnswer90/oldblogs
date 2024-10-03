@@ -100,44 +100,44 @@ nav:
   - 缺省源: 缺省源/缺省源.md
   - 数学:
     - 多项式:
-      - 多项式(Poly): Math/Poly/poly.md
-      - 拉格朗日插值(Lagrange): Math/Poly/interpolation.md
-      - 集合幂级数(FWT): Math/Poly/FWT.md
+      - 多项式: Math/Poly/poly.md
+      - 拉格朗日插值: Math/Poly/interpolation.md
+      - 集合幂级数: Math/Poly/FWT.md
     - 数论:
-      - 最大公约数(gcd): Math/Number theory/gcd.md
+      - 最大公约数: Math/Number theory/gcd.md
       - Miller-Rabin: Math/Number theory/millerrabin.md
       - Pollard-Rho: Math/Number theory/pollardrho.md
-      - 大步小步(BSGS): Math/Number theory/BSGS.md
-      - 中国剩余定理(exCRT): Math/Number theory/CRT.md
-      - 原根(Root): Math/Number theory/genshin.md
-      - 筛法(Thieve): 
+      - 大步小步: Math/Number theory/BSGS.md
+      - 中国剩余定理: Math/Number theory/CRT.md
+      - 原根: Math/Number theory/genshin.md
+      - 筛法: 
         - 杜教筛: Math/Number theory/sieve/dusieve.md
         - Min-25 筛: Math/Number theory/sieve/min25sieve.md
       - 前缀和与反演: Math/Number theory/oper.md
-    - 线性代数(Liniear):
-        - 行列式求值(Det): Math/Linear/determinant.md
-        - 高斯消元(Gauss): Math/Linear/gauss.md
-        - 矩阵求逆(Matrix Inv): Math/Linear/inv.md
-    - Lucas 定理(Lucas): Math/lucas.md
-    - prufer 序(Prufer): Math/prufer.md
+    - 线性代数:
+        - 行列式求值: Math/Linear/determinant.md
+        - 高斯消元: Math/Linear/gauss.md
+        - 矩阵求逆: Math/Linear/inv.md
+    - Lucas 定理: Math/lucas.md
+    - prufer 序: Math/prufer.md
   - 字符串:
     - manacher: String/manacher.md
-    - 后缀数组(SA): String/SA.md
-    - 后缀自动机(SAM): String/SAM.md
-    - 广义后缀自动机(GSAM): String/GSAM.md
-    - AC 自动机(ACAM): String/ACAM.md
+    - 后缀数组: String/SA.md
+    - 后缀自动机: String/SAM.md
+    - 广义后缀自动机: String/GSAM.md
+    - AC 自动机: String/ACAM.md
   - 图论:
-    - dfs 序 LCA(LCA): Graph/LCA.md
-    - 网络流(FLow): Graph/flow.md
-    - KM 算法(KM): Graph/KM.md
-    - 连通性(Connection): Graph/connection.md
-    - 树哈希(Tree Hash): Graph/treehash.md
+    - dfs 序 LCA: Graph/LCA.md
+    - 网络流: Graph/flow.md
+    - KM 算法: Graph/KM.md
+    - 连通性: Graph/connection.md
+    - 树哈希: Graph/treehash.md
   - 数据结构:
-    - 线段树(Segment): DS/Segment.md
-    - 李超树(LiCT): DS/LiCT.md
-    - 伸展树(Splay): DS/Splay.md
-    - 无旋 treap(FHQ): DS/FHQ.md
-    - 可持久化平衡树(RBST): DS/exFHQ.md
-    - 动态树(LCT): DS/LCT.md
-    - 可并堆(LTT): DS/LTT.md
-    - K-D tree(KDT): DS/KDT.md
+    - 线段树: DS/Segment.md
+    - 李超树: DS/LiCT.md
+    - Splay: DS/Splay.md
+    - fhq treap: DS/FHQ.md
+    - 可持久化平衡树: DS/exFHQ.md
+    - 动态树: DS/LCT.md
+    - 可并堆: DS/LTT.md
+    - K-D tree: DS/KDT.md
