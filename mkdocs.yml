@@ -104,6 +104,7 @@ nav:
       - 拉格朗日插值: Math/Poly/interpolation.md
       - 集合幂级数: Math/Poly/FWT.md
     - 数论:
+      - 组合数预处理: Math/fr&inv.md
       - 最大公约数: Math/Number theory/gcd.md
       - Miller-Rabin: Math/Number theory/millerrabin.md
       - Pollard-Rho: Math/Number theory/pollardrho.md
