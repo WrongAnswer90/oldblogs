@@ -19,19 +19,23 @@ FFT($10^6$): $270\text{ms}$
 ```cpp
 namespace Poly
 {
-	const int MAXN=200000;
-	int Shape,Invn[MAXN+10],R[MAXN*4+10],Prt[MAXN*4];
+	inline vi fix(vi A,int n){return A.resize(n),A;}
+	const int MAXN=2000000;
+	int Shape,VBL,Invn[MAXN],R[MAXN<<1],Prt[MAXN<<1],P0[50010],P1[50010];
 	inline void init()
 	{
-		Invn[0]=1;
-		for(int i=1;i<=MAXN;++i)Invn[i]=Cmul(Invn[i-1],i);
-		int tmp=power(Invn[MAXN],MOD-2);
-		for(int i=MAXN;i>=1;--i)Invn[i]=Cmul(tmp,Invn[i-1]),Mmul(tmp,i);
+		P0[0]=P1[0]=1,VBL=ceil(sqrt(MOD)),Invn[0]=1;
+		for(int i=1;i<MAXN;++i)Invn[i]=Cmul(Invn[i-1],i);
+		int tmp=power(Invn[MAXN-1],MOD-2);
+		for(int i=MAXN-1;i>=1;--i)Invn[i]=Cmul(tmp,Invn[i-1]),Mmul(tmp,i);
+		for(int i=1;i<=VBL;++i)P0[i]=Cmul(P0[i-1],Root);
+		for(int i=1;i<=VBL;++i)P1[i]=Cmul(P1[i-1],P0[VBL]);
 	}
-	inline int inv(int x){return x<=MAXN?Invn[x]:power(x,MOD-2);}
+	inline int powerr(int x){return Cmul(P0[x%VBL],P1[x/VBL]);}
 	inline void NTT(vi&A,int n,int opt)
 	{
-		static ull B[MAXN*4+10];ull iv=power(n,MOD-2);A.resize(n);
+		static ull B[MAXN<<1],iv;
+		A.resize(n);
 		for(int i=0;i<n;++i)B[i]=A[R[i]];
 		for(int mid=1;mid<n;mid<<=1)
 		{
@@ -45,99 +49,130 @@ namespace Poly
 			}
 		}
 		if(opt)for(int i=0;i<n;++i)A[i]=B[i]%MOD;
-		else{reverse(B+1,B+n);for(int i=0;i<n;++i)A[i]=Cmul(B[i]%MOD,iv);}
+		else
+		{
+			reverse(B+1,B+n),iv=power(n,MOD-2);
+			for(int i=0;i<n;++i)A[i]=Cmul(B[i]%MOD,iv);
+		}
 	}
 	inline void init(int lim)
 	{
 		if(lim==Shape)return;
-		int n=lim/2;Shape=lim;
+		int n=lim/2;
 		for(int i=0;i<lim;++i)R[i]=(R[i>>1]>>1)|((i&1)?n:0);
 		for(int i=1;i<lim;i<<=1)
 		{
-			int wm=power(Root,(MOD-1)/(i<<1));Prt[i]=1;
+			int wm=powerr((MOD-1)/(i<<1));Prt[i]=1;
 			for(int j=1;j<i;++j)Prt[i+j]=Cmul(Prt[i+j-1],wm);
 		}
+		Shape=lim;
 	}
-	inline vi del(vi A,vi B,int N=-1)
+	inline vi der(vi A)
 	{
-		if(~N)A.resize(N+1),B.resize(N+1);
-		int n=A.size()-1;
-		for(int i=0;i<=n;++i)Mdel(A[i],B[i]);
-		return A;
-	}
-	inline vi add(vi A,vi B,int N=-1)
-	{
-		if(~N)A.resize(N+1),B.resize(N+1);
-		int n=A.size()-1;
-		for(int i=0;i<=n;++i)Madd(A[i],B[i]);
-		return A;
-	}
-	inline vi mul(vi A,int k,int N=-1)
-	{
-		if(~N)A.resize(N+1);
-		int n=A.size()-1;
-		for(int i=0;i<=n;++i)Mmul(A[i],k);
-		return A;
-	}
-	inline vi inte(vi A,int N=-1)
-	{
-		if(~N)A.resize(N+1);
-		int n=A.size();A.resize(n+1);
-		for(int i=n;i>0;--i)A[i]=Cmul(A[i-1],inv(i));
-		return A[0]=0,A;
-	}
-	inline vi der(vi A,int N=-1)
-	{
-		if(~N)A.resize(N+1);
-		int n=A.size()-2;
-		for(int i=0;i<=n;++i)A[i]=Cmul(A[i+1],i+1);
-		return A.resize(n+1),A;
-	}	
-	inline vi FFT(vi A,vi B,int N1=-1,int N2=-1)
-	{
-		if(N1!=-1)A.resize(N1+1);if(N2!=-1)B.resize(N2+1);
-		int n=A.size()-1,m=B.size()-1,N=1,len=0;
-		while(N<=n+m)N<<=1,++len;
-		init(N),NTT(A,N,1),NTT(B,N,1);
-		for(int i=0;i<N;++i)A[i]=Cmul(A[i],B[i]);
-		return NTT(A,N,0),A.resize(n+m+1),A;
-	}
-	inline vi inv(vi A,int N=-1)
-	{
-		if(N!=-1)A.resize(N+1);
-		vi B={(int)power(A[0],MOD-2)};
-		int n=A.size()-1,nn=n;
-		for(n=1;n<=nn+1;n<<=1)
-		{
-			vi TB=B,C(n*2);init(n<<1);
-			copy(A.begin(),A.begin()+min(nn+1,2*n),C.begin());
-			NTT(C,n<<1,1),NTT(B,n<<1,1);
-			for(int i=0;i<(n<<1);++i)C[i]=1ll*C[i]*B[i]%MOD;
-			NTT(C,n<<1,0);C.resize(n<<1);fill(C.begin(),C.begin()+n,0),NTT(C,n<<1,1);
-			for(int i=0;i<(n<<1);++i)B[i]=1ll*B[i]*(MOD-C[i])%MOD;
-			NTT(B,n<<1,0);B.resize(n<<1),move(TB.begin(),TB.end(),B.begin());
-		}
-		return B.resize(nn+1),B;
-	}
-	inline vi ln(vi A,int N=-1){return inte(FFT(der(A,N),inv(A,N)));}
-	inline vi exp(vi A,int N=-1)
-	{
-		if(~N)A.resize(N+1);
-		int m=A.size()-1;static vi B,C;
-		B.clear(),C.clear(),B.eb(1);
-		for(int n=2;n<=m;n<<=1)B.resize(n+1),C=del(A,ln(B),n),Madd(C[0],1),B=FFT(B,C,n,n);
-		C=del(A,ln(B),m),Madd(C[0],1);
-		B.resize(m+1),C.resize(m+1);
-		B=FFT(B,C,m,m),B.resize(m+1);
+		int N=A.size();
+		vi B(N-1);
+		for(int i=0;i<N-1;++i)B[i]=Cmul(i+1,A[i+1]);
 		return B;
 	}
-	inline vi div(vi A,vi B,int N1=-1,int N2=-1)
+	inline vi inte(vi A)
 	{
-		if(~N1)A.resize(N1+1);if(~N2)B.resize(N2+1);
-		int n=A.size()-1,m=B.size()-1;
-		reverse(A.begin(),A.end()),reverse(B.begin(),B.end());
-		A=FFT(A,inv(B,n-m+1)),A.resize(n-m+1),reverse(A.begin(),A.end());
-		return A;
+		int N=A.size();
+		vi B(N+1);
+		for(int i=1;i<=N;++i)B[i]=Cmul(A[i-1],power(i,MOD-2));
+		return B;
+	}
+	inline vi FFT(vi A,vi B)
+	{
+		int n=A.size(),m=B.size(),N=1;
+		while(N<=n+m)N<<=1;
+		init(N),NTT(A,N,1),NTT(B,N,1);
+		for(int i=0;i<N;++i)A[i]=Cmul(A[i],B[i]);
+		return NTT(A,N,0),A.resize(n+m-1),A;
+	}
+	inline vi inv(vi A)
+	{
+		static vi B,TB,C;
+		B={(int)power(A[0],MOD-2)};
+		int N=A.size();
+		for(int n=1;n<N;n<<=1)
+		{
+			TB=B,C.clear(),C.resize(n<<1);
+			copy(A.begin(),A.begin()+min(N,2*n),C.begin());
+			init(n<<1);
+			NTT(C,n<<1,1),NTT(B,n<<1,1);
+			for(int i=0;i<(n<<1);++i)Mmul(C[i],B[i]);
+			NTT(C,n<<1,0);
+			fill(C.begin(),C.begin()+n,0);
+			NTT(C,n<<1,1);
+			for(int i=0;i<(n<<1);++i)Mmul(B[i],MOD-C[i]);
+			NTT(B,n<<1,0);
+			move(TB.begin(),TB.end(),B.begin());
+		}
+		return B.resize(N),B;
+	}
+	inline vi sqrt(vi A)
+	{
+		static vi G,F,TG,TF,TA;
+		int n=1,N=A.size();
+		G={1};
+		for(;n<N;n<<=1)
+		{
+			TA.resize(n<<1);
+			TG=G,TG.resize(n<<1);
+			G.resize(n);
+			copy(A.begin(),A.begin()+min(N,n),TA.begin());
+			init(n<<1);
+			NTT(TA,n<<1,1),NTT(TG,n<<1,1);
+			for(int i=0;i<(n<<1);++i)TG[i]=Cdel(TG[i],Cmul(TA[i],TG[i],TG[i],TG[i]));
+			NTT(TG,n<<1,0);
+			if(n>1)for(int i=n>>1;i<n;++i)G[i]=Cmul(TG[i],inv2);
+		}
+		G.resize(n),F.resize(n),NTT(G,n,1);
+		for(int i=0;i<n;++i)F[i]=Cmul(G[i],TA[i]);
+		NTT(F,n,0);
+		for(int i=n>>1;i<n;++i)F[i]=0;
+		TF=F,NTT(TF,n,1);
+		A.resize(n),NTT(A,n,1);
+		for(int i=0;i<n;++i)TF[i]=Cmul(G[i],Cdel(A[i],Cmul(TF[i],TF[i])));
+		NTT(TF,n,0);
+		for(int i=n>>1;i<N;++i)F[i]=Cmul(TF[i],inv2);
+		return F.resize(N),F;
+	}
+    inline vi ln(vi A)
+	{
+		int N=A.size();
+		A=FFT(der(A),inv(A));
+		return inte(fix(A,N-1));
+	}
+	inline vi exp(vi A)
+	{
+		static vi B,C,D,TB;
+		int N=A.size();B={1};
+		for(int n=1;n<N;n<<=1)
+		{
+			TB=C=B,C.resize(n<<1),B.resize(n<<1);
+			D=ln(B),Mdel(D[0],1);
+			for(int i=0;i<min(n<<1,N);++i)D[i]=Cdel(A[i],D[i]);
+			for(int i=N;i<(n<<1);++i)D[i]=MOD-D[i];
+			init(n<<1),NTT(D,n<<1,1),NTT(C,n<<1,1);
+			for(int i=0;i<(n<<1);++i)Mmul(D[i],C[i]);
+			NTT(D,n<<1,0),B=D,copy(TB.begin(),TB.end(),B.begin());
+		}
+		return B.resize(N),B;
+	}
+	inline pair<vi,vi> div(vi A,vi B)
+	{
+		int n=A.size(),m=B.size();
+		static vi C,D;
+		reverse(A.begin(),A.end());
+		reverse(B.begin(),B.end());
+		D=FFT(A,inv(fix(B,n-m+1))),D.resize(n-m+1);
+		reverse(D.begin(),D.end());
+		reverse(A.begin(),A.end());
+		reverse(B.begin(),B.end());
+		C=FFT(B,D);
+		for(int i=0;i<m;++i)C[i]=Cdel(A[i],C[i]);
+		return mp(D,fix(C,m-1));
 	}
 }
 ```
