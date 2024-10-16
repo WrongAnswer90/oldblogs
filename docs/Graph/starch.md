@@ -18,6 +18,7 @@ void starch(int x)
 {
 	minn=inf,findrt(x),findrt(x=root),vis[x]=1;
 	//...
-	for(auto to:T[x])if(!vis[to])starch(to);
+	for(auto to:T[x])if(!vis[to])
+	all=siz[to],starch(to);
 }
 ```
