@@ -18,6 +18,7 @@ inline void commit()
 	again:
 	z=system("git push -f origin main");
 	if(z){Sleep(20000);goto again;}
+	system("mkdocs gh-deploy");
 }
 int main()
 {

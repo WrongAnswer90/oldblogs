@@ -105,16 +105,16 @@ nav:
       - 集合幂级数: Math/Poly/FWT.md
     - 数论:
       - 组合数预处理: Math/fr&inv.md
-      - 最大公约数: Math/Number theory/gcd.md
-      - Miller-Rabin: Math/Number theory/millerrabin.md
-      - Pollard-Rho: Math/Number theory/pollardrho.md
-      - 大步小步: Math/Number theory/BSGS.md
-      - 中国剩余定理: Math/Number theory/CRT.md
-      - 原根: Math/Number theory/genshin.md
+      - 最大公约数: Math/numbertheory/gcd.md
+      - Miller-Rabin: Math/numbertheory/millerrabin.md
+      - Pollard-Rho: Math/numbertheory/pollardrho.md
+      - 大步小步: Math/numbertheory/BSGS.md
+      - 中国剩余定理: Math/numbertheory/CRT.md
+      - 原根: Math/numbertheory/genshin.md
       - 筛法: 
-        - 杜教筛: Math/Number theory/sieve/dusieve.md
-        - Min-25 筛: Math/Number theory/sieve/min25sieve.md
-      - 前缀和与反演: Math/Number theory/oper.md
+        - 杜教筛: Math/numbertheory/sieve/dusieve.md
+        - Min-25 筛: Math/numbertheory/sieve/min25sieve.md
+      - 前缀和与反演: Math/numbertheory/oper.md
     - 线性代数:
         - 行列式求值: Math/Linear/determinant.md
         - 高斯消元: Math/Linear/gauss.md
