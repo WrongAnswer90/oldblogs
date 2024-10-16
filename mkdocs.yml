@@ -133,6 +133,7 @@ nav:
     - KM 算法: Graph/KM.md
     - 连通性: Graph/connection.md
     - 树哈希: Graph/treehash.md
+    - 点分治: Graph/starch.md
   - 数据结构:
     - 线段树: DS/Segment.md
     - 李超树: DS/LiCT.md
