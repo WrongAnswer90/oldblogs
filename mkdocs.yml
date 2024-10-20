@@ -128,6 +128,7 @@ nav:
     - 广义后缀自动机: String/GSAM.md
     - AC 自动机: String/ACAM.md
   - 图论:
+    - 树链剖分: Graph/HLD.md
     - dfs 序 LCA: Graph/LCA.md
     - 网络流: Graph/flow.md
     - KM 算法: Graph/KM.md
