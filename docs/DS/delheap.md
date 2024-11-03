@@ -16,4 +16,3 @@ struct Delheap
 	inline int top(){return upd(),q.top();}
 };
 ```
-=
