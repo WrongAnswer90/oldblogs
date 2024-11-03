@@ -10,8 +10,10 @@ struct Delheap
 		while(p.size()&&q.size()&&!(p.top()<q.top())&&!(q.top()<p.top()))
 		q.pop(),p.pop();
 	}
-	inline void pop(){return upd(),q.top();}
+	inline void pop(){return upd(),q.pop();}
 	inline int size(){return p.size()-q.size();}
+	inline int empty(){return p.size()==q.size();}
 	inline int top(){return upd(),q.top();}
 };
 ```
+=

@@ -137,6 +137,7 @@ nav:
     - 点分治: Graph/starch.md
   - 数据结构:
     - 可删堆: DS/delheap.md
+    - 可删集合: DS/delset.md
     - 线段树: DS/Segment.md
     - 李超树: DS/LiCT.md
     - Splay: DS/Splay.md
