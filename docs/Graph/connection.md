@@ -1,10 +1,11 @@
 ## 边双联通分量
 
 ```cpp
-int n,m,cnt=1,num,col,low[500001],dfn[500001],head[500001],to[4000001],nex[4000001];
+const int N=100000,M=200000;
+int n,m,cnt=1,num,col,low[N+10],dfn[N+10],head[N+10],to[M+10],nex[M+10];
 inline void add(int x,int y){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt;}
 stack<int> st;
-vector<int> ve[500001];
+vi ve[N+10];
 void tarjan(int x,int fromi)
 {
     dfn[x]=low[x]=++num,st.e(x);
