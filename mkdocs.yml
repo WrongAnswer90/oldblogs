@@ -99,12 +99,13 @@ nav:
   - Home: index.md
   - 缺省源: 缺省源.md
   - 数学:
+    - 组合数预处理: Math/fr&inv.md
     - 多项式:
       - 多项式: Math/Poly/poly.md
       - 拉格朗日插值: Math/Poly/interpolation.md
       - 集合幂级数: Math/Poly/FWT.md
     - 数论:
-      - 组合数预处理: Math/fr&inv.md
+      - Lucas 定理: Math/numbertheory/lucas.md
       - 最大公约数: Math/numbertheory/gcd.md
       - Miller-Rabin: Math/numbertheory/millerrabin.md
       - Pollard-Rho: Math/numbertheory/pollardrho.md
@@ -119,8 +120,6 @@ nav:
         - 行列式求值: Math/Linear/determinant.md
         - 高斯消元: Math/Linear/gauss.md
         - 矩阵求逆: Math/Linear/inv.md
-    - Lucas 定理: Math/lucas.md
-    - prufer 序: Math/prufer.md
   - 字符串:
     - manacher: String/manacher.md
     - 后缀数组: String/SA.md
@@ -128,6 +127,7 @@ nav:
     - 广义后缀自动机: String/GSAM.md
     - AC 自动机: String/ACAM.md
   - 图论:
+    - prufer 序: Graph/prufer.md
     - 树链剖分: Graph/HLD.md
     - dfs 序 LCA: Graph/LCA.md
     - 网络流: Graph/flow.md

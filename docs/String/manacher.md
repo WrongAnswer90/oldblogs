@@ -1,22 +1,22 @@
 ```cpp
-char s[11000005];
-int n,d1[11000005],d2[11000005];
+const int N=1000000;
+char s[N+10];
+int n,f[N+10],g[N+10];
 inline void manacher()
 {
     n=strlen(s+1);
-	for(int i=1,l=1,r=0;i<=n;++i)
+	s[0]='*',s[n+1]='#';
+	for(int i=1,p=0,r=0;i<=n;++i)
 	{
-		int k=(i>r)?1:min(d1[l+r-i],r-i+1);
-		while((0<=i-k)&&(i+k<=n)&&(s[i+k]==s[i-k]))k++;
-		d1[i]=k--;
-		if(i+k>r)r=i+k,l=i-k;
+		if(i<=r)f[i]=min(r-i+1,f[2*p-i]);
+		while(s[i-f[i]]==s[i+f[i]])++f[i];
+		if(Mmax(r,i+f[i]-1))p=i;
 	}
-	for(int i=1,l=1,r=0;i<=n;++i)
+	for(int i=1,p=0,r=0;i<n;++i)
 	{
-		int k=(i>r)?0:min(d2[l+r-i+1],r-i+1);
-		while((0<i-k)&&(i+k<=n)&&(s[i-k-1]==s[i+k]))k++;
-		d2[i]=k--;
-		if(i+k>r)r=i+k,l=i-k-1;
+		if(i<=r)g[i]=min(r-i,g[2*p-i]);
+		while(s[i-g[i]]==s[i+g[i]+1])++g[i];
+		if(Mmax(r,i+g[i]))p=i;
 	}
 }
 ```
