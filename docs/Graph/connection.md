@@ -5,19 +5,19 @@ int n,m,cnt=1,num,col,low[500001],dfn[500001],head[500001],to[4000001],nex[40000
 inline void add(int x,int y){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt;}
 stack<int> st;
 vector<int> ve[500001];
-void tarjan(int k,int fromi)
+void tarjan(int x,int fromi)
 {
-    dfn[k]=low[k]=++num,st.e(k);
-    for(int i=head[k];i;i=nex[i])
+    dfn[x]=low[x]=++num,st.e(x);
+    for(int i=head[x];i;i=nex[i])
     {
         if(i==(fromi^1))continue;
-        if(!dfn[to[i]])tarjan(to[i],i),low[k]=min(low[k],low[to[i]]);
-        else low[k]=min(low[k],dfn[to[i]]);
+        if(!dfn[to[i]])tarjan(to[i],i),low[x]=min(low[x],low[to[i]]);
+        else low[x]=min(low[x],dfn[to[i]]);
     }
-    if(low[k]==dfn[k])
+    if(low[x]==dfn[x])
     {
         int y;++col;
-        do ve[col].eb(y=st.top()),st.pop();while(y!=k);
+        do ve[col].eb(y=st.top()),st.pop();while(y!=x);
     }
 }
 ```
@@ -25,22 +25,48 @@ void tarjan(int k,int fromi)
 ## 强联通分量
 
 ```cpp
-int n,m,cnt,num,col,f[10001],deg[10001],c[10001],dfn[10001],low[10001],ins[10001],x[100001],y[100001],head[10001],to[100001],nex[100001];
+const int N=100000;
+int tot,dfn[N+10],low[N+10];
+int num,c[N+10];
+int ins[N+10];
+stack<int> st;
+vi G[N+10];
+void tarjan(int x)
+{
+    st.e(x),ins[x]=1,dfn[x]=low[x]=++tot;
+    for(auto to:G[x])
+    {
+        if(!dfn[to])tarjan(to),low[x]=min(low[x],low[to]);
+        else if(ins[to])low[x]=min(low[x],dfn[to]);
+    }
+    if(dfn[x]==low[x])
+    {
+        int y;++num;
+        do c[y=st.top()]=num,ins[y]=0,st.pop();while(y!=x);
+    }
+}
+```
+
+```cpp
+const int N=100000,M=200010;
+int cnt,head[M+10],to[M+10],nex[M+10];
+int tot,dfn[N+10],low[N+10];
+int num,c[N+10];
+int ins[N+10];
 inline void add(int x,int y){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt;}
 stack<int> st;
-queue<int> q;
-void tarjan(int k)
+void tarjan(int x)
 {
-    st.e(k),ins[k]=1,dfn[k]=low[k]=++num;
-    for(int i=head[k];i;i=nex[i])
+    st.e(x),ins[x]=1,dfn[x]=low[x]=++tot;
+    for(int i=head[x];i;i=nex[i])
     {
-        if(!dfn[to[i]])tarjan(to[i]),low[k]=min(low[k],low[to[i]]);
-        else if(ins[to[i]])low[k]=min(low[k],dfn[to[i]]);
+        if(!dfn[to[i]])tarjan(to[i]),low[x]=min(low[x],low[to[i]]);
+        else if(ins[to[i]])low[x]=min(low[x],dfn[to[i]]);
     }
-    if(dfn[k]==low[k])
+    if(dfn[x]==low[x])
     {
-        int y;++col;
-        do c[y=st.top()]=col,ins[y]=0,st.pop();while(y!=k);
+        int y;++num;
+        do c[y=st.top()]=num,ins[y]=0,st.pop();while(y!=x);
     }
 }
 ```
@@ -48,25 +74,26 @@ void tarjan(int k)
 ## 广义圆方树
 
 ```cpp
-int n,m,q,cnt,tot,num,x[200001],y[200001],low[40001],dfn[40001],head[40001],to[80001],nex[80001];
-inline void add(int x,int y){to[++cnt]=y,nex[cnt]=head[x],head[x]=cnt;}
-vector<int> G[20001],T[40010];
+const int N=100010;
+int tot,low[N+10],dfn[N+10];
+int num;
+vi G[N+10],T[N*2+10];
 stack<int> st;
-void tarjan(int k)
+void tarjan(int x)
 {
-    low[k]=dfn[k]=++tot,st.e(k);int y;
-    for(auto to:G[k])
+    low[x]=dfn[x]=++tot,st.e(x);int y;
+    for(auto to:G[x])
     {
         if(!dfn[to])
         {
-            tarjan(to),low[k]=min(low[k],low[to]);
-            if(low[to]>=dfn[k])
+            tarjan(to),low[x]=min(low[x],low[to]);
+            if(low[to]>=dfn[x])
             {
-                T[++num].eb(k),T[k].eb(num);
+                T[++num].eb(x),T[x].eb(num);
                 do T[num].eb(y=st.top()),T[st.top()].eb(num),st.pop();while(y!=to);
             }
         }
-        else low[k]=min(low[k],dfn[to]);
+        else low[x]=min(low[x],dfn[to]);
     }
 }
 ```
