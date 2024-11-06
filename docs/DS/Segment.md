@@ -65,11 +65,11 @@ template<class Info> struct Segment
 	#undef ls
 	#undef rs
 };
-struct Node
+struct Info
 {
 	//...
-	Node(){}
-	Node operator +(const Node nd)const
+	Info(){}
+	Info operator +(const Info nd)const
 	{
 		//...
 	}
@@ -179,19 +179,19 @@ struct Tag
 		return v;
 	}
 };
-struct Node
+struct Info
 {
 	//...
-	Node(){}
-	Node operator +(const Node nd)const
+	Info(){}
+	Info operator +(const Info nd)const
 	{
-		Node v;
+		Info v;
 		//...
 		return v;
 	}
-	Node operator *(const Tag nd)const
+	Info operator *(const Tag nd)const
 	{
-		Node v;
+		Info v;
 		//...
 		return v;
 	}
