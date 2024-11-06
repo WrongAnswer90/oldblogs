@@ -1443,11 +1443,11 @@
 <span class="w">    </span><span class="cp">#undef ls</span>
 <span class="w">    </span><span class="cp">#undef rs</span>
 <span class="p">};</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Info</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">//...</span>
-<span class="w">    </span><span class="n">Node</span><span class="p">(){}</span>
-<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
+<span class="w">    </span><span class="n">Info</span><span class="p">(){}</span>
+<span class="w">    </span><span class="n">Info</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Info</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">//...</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1670,19 +1670,19 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Info</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">//...</span>
-<span class="w">    </span><span class="n">Node</span><span class="p">(){}</span>
-<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
+<span class="w">    </span><span class="n">Info</span><span class="p">(){}</span>
+<span class="w">    </span><span class="n">Info</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Info</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Info</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
 <span class="w">        </span><span class="c1">//...</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Tag</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
+<span class="w">    </span><span class="n">Info</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Tag</span><span class="w"> </span><span class="n">nd</span><span class="p">)</span><span class="k">const</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Info</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
 <span class="w">        </span><span class="c1">//...</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
