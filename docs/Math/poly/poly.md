@@ -48,7 +48,7 @@ namespace Poly
 				}
 			}
 		}
-		if(opt)for(int i=0;i<n;++i)A[i]=B[i]%MOD;
+		if(opt==1)for(int i=0;i<n;++i)A[i]=B[i]%MOD;
 		else
 		{
 			reverse(B+1,B+n),iv=power(n,MOD-2);
@@ -173,6 +173,65 @@ namespace Poly
 		C=FFT(B,D);
 		for(int i=0;i<m;++i)C[i]=Cdel(A[i],C[i]);
 		return mp(D,fix(C,m-1));
+	}
+	inline int bostan_mori(vi P,vi Q,int n)
+	{
+		vi rQ;
+		int N=1;
+		while(N<=(int)P.size()*2)N<<=1;
+		init(N);
+		auto reduce=[&](vi&A,int opt)->void
+		{
+			for(int i=opt;i<(int)A.size();i+=2)A[i>>1]=A[i];
+			A.resize((A.size()+1-opt)>>1);
+		};
+		while(n)
+		{
+			rQ=Q;
+			for(int i=1;i<(int)Q.size();i+=2)rQ[i]=Cdel(0,rQ[i]);
+			NTT(rQ,N,1),NTT(P,N,1),NTT(Q,N,1);
+			for(int i=0;i<N;++i)Mmul(P[i],rQ[i]),Mmul(Q[i],rQ[i]);
+			NTT(P,N,0),NTT(Q,N,0);
+			reduce(Q,0),reduce(P,n&1);
+			n>>=1;
+		}
+		if(P.empty())return 0;
+		return Cmul(P[0],power(Q[0],MOD-2));
+	}
+	inline int CCHIR(vi P,vi Q,int n)
+	{
+		int m=Q.size();
+		Q.eb(0);
+		for(int j=m;j;--j)Q[j]=Q[j-1];
+		Q[0]=MOD-1;
+		return bostan_mori(fix(FFT(P,Q),m),Q,n);
+	}
+	inline vi BM(vi A)
+	{
+		vi lst,ans;
+		int p=-1,delta=0;
+		for(int i=0;i<(int)A.size();++i)
+		{
+			int tmp=A[i];
+			for(int j=0;j<(int)ans.size();++j)
+			Mdel(tmp,Cmul(A[i-1-j],ans[j]));
+			if(!tmp)continue;
+			if(p==-1)
+			{
+				p=i,delta=tmp;
+				ans.resize(i+1);
+				continue;
+			}
+			vi now=ans;
+			int mul=Cmul(tmp,power(delta,MOD-2));
+			if((int)ans.size()<(int)lst.size()+i-p)
+			ans.resize((int)lst.size()+i-p);
+			Madd(ans[i-p-1],mul);
+			for(int j=0;j<(int)lst.size();++j)
+			Mdel(ans[i-p+j],Cmul(mul,lst[j]));
+			if((int)now.size()-i<(int)lst.size()-p)
+			lst=now,p=i,delta=tmp;
+		}
 	}
 }
 ```
