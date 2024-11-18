@@ -865,6 +865,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../String/PAM/" class="md-nav__link">
+        回文自动机
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1248,16 +1262,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Delset</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="n">st</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="n">st</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;}</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="o">++</span><span class="n">t</span><span class="p">[</span><span class="n">x</span><span class="p">];}</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">upd</span><span class="p">(){</span><span class="k">while</span><span class="p">(</span><span class="n">top</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">]])</span><span class="o">--</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">]];}</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">];}</span>
-<span class="p">};</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Delset</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="n">st</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="n">st</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;}</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="o">++</span><span class="n">t</span><span class="p">[</span><span class="n">x</span><span class="p">];}</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">upd</span><span class="p">(){</span><span class="k">while</span><span class="p">(</span><span class="n">top</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">]])</span><span class="o">--</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">]];}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">];}</span>
+<span class="w">    </span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 
 

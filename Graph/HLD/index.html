@@ -865,6 +865,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../String/PAM/" class="md-nav__link">
+        回文自动机
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1263,31 +1277,31 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="p">,</span><span class="n">siz</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">dep</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">son</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">id</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">fa</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">dfs0</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Fa</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">fa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">Fa</span><span class="p">;</span>
-<span class="w">    </span><span class="n">siz</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">Fa</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">to</span><span class="o">:</span><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">])</span><span class="k">if</span><span class="p">(</span><span class="n">to</span><span class="o">!=</span><span class="n">Fa</span><span class="p">)</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="p">,</span><span class="n">siz</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">dep</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">son</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">id</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">fa</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">dfs0</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Fa</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">dfs0</span><span class="p">(</span><span class="n">to</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">siz</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+=</span><span class="n">siz</span><span class="p">[</span><span class="n">to</span><span class="p">];</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">siz</span><span class="p">[</span><span class="n">to</span><span class="p">]</span><span class="o">&gt;</span><span class="n">siz</span><span class="p">[</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">]])</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">to</span><span class="p">;</span>
+<span class="w">        </span><span class="n">fa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">Fa</span><span class="p">;</span>
+<span class="w">        </span><span class="n">siz</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">Fa</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">to</span><span class="o">:</span><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">])</span><span class="k">if</span><span class="p">(</span><span class="n">to</span><span class="o">!=</span><span class="n">Fa</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dfs0</span><span class="p">(</span><span class="n">to</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">siz</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+=</span><span class="n">siz</span><span class="p">[</span><span class="n">to</span><span class="p">];</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">siz</span><span class="p">[</span><span class="n">to</span><span class="p">]</span><span class="o">&gt;</span><span class="n">siz</span><span class="p">[</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">]])</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">to</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">dfs1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Top</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">top</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">Top</span><span class="p">;</span>
-<span class="w">    </span><span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=++</span><span class="n">tot</span><span class="p">;</span>
-<span class="w">    </span><span class="n">id</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">])</span><span class="n">dfs1</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">Top</span><span class="p">);</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">to</span><span class="o">:</span><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">dfs1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Top</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">to</span><span class="o">!=</span><span class="n">fa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">to</span><span class="o">!=</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-<span class="w">        </span><span class="n">dfs1</span><span class="p">(</span><span class="n">to</span><span class="p">,</span><span class="n">to</span><span class="p">);</span>
+<span class="w">        </span><span class="n">top</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">Top</span><span class="p">;</span>
+<span class="w">        </span><span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=++</span><span class="n">tot</span><span class="p">;</span>
+<span class="w">        </span><span class="n">id</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">])</span><span class="n">dfs1</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">Top</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">to</span><span class="o">:</span><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">to</span><span class="o">!=</span><span class="n">fa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">to</span><span class="o">!=</span><span class="n">son</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="w">            </span><span class="n">dfs1</span><span class="p">(</span><span class="n">to</span><span class="p">,</span><span class="n">to</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 

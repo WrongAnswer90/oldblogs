@@ -875,6 +875,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAM/" class="md-nav__link">
+        回文自动机
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1270,38 +1284,38 @@
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">200000</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">trie</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">][</span><span class="mi">26</span><span class="p">],</span><span class="n">fail</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">end</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
-<span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">len</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">200000</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">trie</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">][</span><span class="mi">26</span><span class="p">],</span><span class="n">fail</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">],</span><span class="n">end</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">    </span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">])</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">=++</span><span class="n">cnt</span><span class="p">;</span>
-<span class="w">        </span><span class="n">now</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">];</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">end</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="o">=</span><span class="n">now</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">q</span><span class="p">.</span><span class="n">e</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">trie</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">len</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">])</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">=++</span><span class="n">cnt</span><span class="p">;</span>
+<span class="w">            </span><span class="n">now</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">end</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="o">=</span><span class="n">now</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="n">e</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">trie</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="n">fail</span><span class="p">[</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span>
-<span class="w">                </span><span class="n">add</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">],</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
-<span class="w">                </span><span class="n">q</span><span class="p">.</span><span class="n">e</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">fail</span><span class="p">[</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                    </span><span class="n">add</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">],</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">                    </span><span class="n">q</span><span class="p">.</span><span class="n">e</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span>
 <span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1344,13 +1358,13 @@
       
       
         
-        <a href="../../Graph/prufer/" class="md-footer__link md-footer__link--next" aria-label="下一页: prufer 序" rel="next">
+        <a href="../PAM/" class="md-footer__link md-footer__link--next" aria-label="下一页: 回文自动机" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              prufer 序
+              回文自动机
             </div>
           </div>
           <div class="md-footer__button md-icon">

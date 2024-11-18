@@ -10,21 +10,21 @@
         <meta name="author" content="WrongAnswer90">
       
       
-        <link rel="canonical" href="https://wronganswer90.github.io/oldblogs/Math/numbertheory/millerrabin/">
+        <link rel="canonical" href="https://wronganswer90.github.io/oldblogs/String/PAM/">
       
-      <link rel="icon" href="../../..">
+      <link rel="icon" href="../..">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Miller-Rabin - My Blogs</title>
+        <title>回文自动机 - My Blogs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -41,9 +41,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../static/css/extra.css?v=14">
+      <link rel="stylesheet" href="../../static/css/extra.css?v=14">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -81,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="My Blogs" class="md-header__button md-logo" aria-label="My Blogs" data-md-component="logo">
+    <a href="../.." title="My Blogs" class="md-header__button md-logo" aria-label="My Blogs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Miller-Rabin
+              回文自动机
             
           </span>
         </div>
@@ -205,7 +205,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -217,10 +217,26 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../%E7%BC%BA%E7%9C%81%E6%BA%90/" class="md-tabs__link">
+    <a href="../../%E7%BC%BA%E7%9C%81%E6%BA%90/" class="md-tabs__link">
       缺省源
     </a>
   </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Math/fr%26inv/" class="md-tabs__link">
+        数学
+      </a>
+    </li>
+  
 
       
         
@@ -234,23 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../fr%26inv/" class="md-tabs__link md-tabs__link--active">
-        数学
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../String/manacher/" class="md-tabs__link">
+      <a href="../manacher/" class="md-tabs__link md-tabs__link--active">
         字符串
       </a>
     </li>
@@ -266,7 +266,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Graph/prufer/" class="md-tabs__link">
+      <a href="../../Graph/prufer/" class="md-tabs__link">
         图论
       </a>
     </li>
@@ -282,7 +282,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../DS/delheap/" class="md-tabs__link">
+      <a href="../../DS/delheap/" class="md-tabs__link">
         数据结构
       </a>
     </li>
@@ -310,7 +310,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="My Blogs" class="md-nav__button md-logo" aria-label="My Blogs" data-md-component="logo">
+    <a href="../.." title="My Blogs" class="md-nav__button md-logo" aria-label="My Blogs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%BA%E7%9C%81%E6%BA%90/" class="md-nav__link">
+      <a href="../../%E7%BC%BA%E7%9C%81%E6%BA%90/" class="md-nav__link">
         缺省源
       </a>
     </li>
@@ -369,14 +369,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -399,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fr%26inv/" class="md-nav__link">
+      <a href="../../Math/fr%26inv/" class="md-nav__link">
         组合数预处理
       </a>
     </li>
@@ -439,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Poly/poly/" class="md-nav__link">
+      <a href="../../Math/Poly/poly/" class="md-nav__link">
         多项式
       </a>
     </li>
@@ -453,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Poly/interpolation/" class="md-nav__link">
+      <a href="../../Math/Poly/interpolation/" class="md-nav__link">
         拉格朗日插值
       </a>
     </li>
@@ -467,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Poly/FWT/" class="md-nav__link">
+      <a href="../../Math/Poly/FWT/" class="md-nav__link">
         集合幂级数
       </a>
     </li>
@@ -486,14 +484,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
@@ -516,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lucas/" class="md-nav__link">
+      <a href="../../Math/numbertheory/lucas/" class="md-nav__link">
         Lucas 定理
       </a>
     </li>
@@ -530,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gcd/" class="md-nav__link">
+      <a href="../../Math/numbertheory/gcd/" class="md-nav__link">
         最大公约数
       </a>
     </li>
@@ -542,19 +538,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Math/numbertheory/millerrabin/" class="md-nav__link">
         Miller-Rabin
       </a>
-      
     </li>
   
 
@@ -566,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pollardrho/" class="md-nav__link">
+      <a href="../../Math/numbertheory/pollardrho/" class="md-nav__link">
         Pollard-Rho
       </a>
     </li>
@@ -580,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../BSGS/" class="md-nav__link">
+      <a href="../../Math/numbertheory/BSGS/" class="md-nav__link">
         大步小步
       </a>
     </li>
@@ -594,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CRT/" class="md-nav__link">
+      <a href="../../Math/numbertheory/CRT/" class="md-nav__link">
         中国剩余定理
       </a>
     </li>
@@ -608,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../genshin/" class="md-nav__link">
+      <a href="../../Math/numbertheory/genshin/" class="md-nav__link">
         原根
       </a>
     </li>
@@ -648,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sieve/dusieve/" class="md-nav__link">
+      <a href="../../Math/numbertheory/sieve/dusieve/" class="md-nav__link">
         杜教筛
       </a>
     </li>
@@ -662,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sieve/min25sieve/" class="md-nav__link">
+      <a href="../../Math/numbertheory/sieve/min25sieve/" class="md-nav__link">
         Min-25 筛
       </a>
     </li>
@@ -683,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oper/" class="md-nav__link">
+      <a href="../../Math/numbertheory/oper/" class="md-nav__link">
         前缀和与反演
       </a>
     </li>
@@ -730,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linear/determinant/" class="md-nav__link">
+      <a href="../../Math/Linear/determinant/" class="md-nav__link">
         行列式求值
       </a>
     </li>
@@ -744,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linear/gauss/" class="md-nav__link">
+      <a href="../../Math/Linear/gauss/" class="md-nav__link">
         高斯消元
       </a>
     </li>
@@ -758,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linear/inv/" class="md-nav__link">
+      <a href="../../Math/Linear/inv/" class="md-nav__link">
         矩阵求逆
       </a>
     </li>
@@ -785,12 +773,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -813,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../String/manacher/" class="md-nav__link">
+      <a href="../manacher/" class="md-nav__link">
         manacher
       </a>
     </li>
@@ -827,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../String/SA/" class="md-nav__link">
+      <a href="../SA/" class="md-nav__link">
         后缀数组
       </a>
     </li>
@@ -841,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../String/SAM/" class="md-nav__link">
+      <a href="../SAM/" class="md-nav__link">
         后缀自动机
       </a>
     </li>
@@ -855,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../String/GSAM/" class="md-nav__link">
+      <a href="../GSAM/" class="md-nav__link">
         广义后缀自动机
       </a>
     </li>
@@ -869,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../String/ACAM/" class="md-nav__link">
+      <a href="../ACAM/" class="md-nav__link">
         AC 自动机
       </a>
     </li>
@@ -881,11 +871,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../String/PAM/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         回文自动机
       </a>
+      
     </li>
   
 
@@ -931,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/prufer/" class="md-nav__link">
+      <a href="../../Graph/prufer/" class="md-nav__link">
         prufer 序
       </a>
     </li>
@@ -945,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/HLD/" class="md-nav__link">
+      <a href="../../Graph/HLD/" class="md-nav__link">
         树链剖分
       </a>
     </li>
@@ -959,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/LCA/" class="md-nav__link">
+      <a href="../../Graph/LCA/" class="md-nav__link">
         dfs 序 LCA
       </a>
     </li>
@@ -973,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/flow/" class="md-nav__link">
+      <a href="../../Graph/flow/" class="md-nav__link">
         网络流
       </a>
     </li>
@@ -987,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/KM/" class="md-nav__link">
+      <a href="../../Graph/KM/" class="md-nav__link">
         KM 算法
       </a>
     </li>
@@ -1001,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/connection/" class="md-nav__link">
+      <a href="../../Graph/connection/" class="md-nav__link">
         连通性
       </a>
     </li>
@@ -1015,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/treehash/" class="md-nav__link">
+      <a href="../../Graph/treehash/" class="md-nav__link">
         树哈希
       </a>
     </li>
@@ -1029,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Graph/starch/" class="md-nav__link">
+      <a href="../../Graph/starch/" class="md-nav__link">
         点分治
       </a>
     </li>
@@ -1077,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/delheap/" class="md-nav__link">
+      <a href="../../DS/delheap/" class="md-nav__link">
         可删堆
       </a>
     </li>
@@ -1091,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/delset/" class="md-nav__link">
+      <a href="../../DS/delset/" class="md-nav__link">
         可删集合
       </a>
     </li>
@@ -1105,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/Segment/" class="md-nav__link">
+      <a href="../../DS/Segment/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -1119,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/LiCT/" class="md-nav__link">
+      <a href="../../DS/LiCT/" class="md-nav__link">
         李超树
       </a>
     </li>
@@ -1133,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/Splay/" class="md-nav__link">
+      <a href="../../DS/Splay/" class="md-nav__link">
         Splay
       </a>
     </li>
@@ -1147,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/FHQ/" class="md-nav__link">
+      <a href="../../DS/FHQ/" class="md-nav__link">
         fhq treap
       </a>
     </li>
@@ -1161,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/exFHQ/" class="md-nav__link">
+      <a href="../../DS/exFHQ/" class="md-nav__link">
         可持久化平衡树
       </a>
     </li>
@@ -1175,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/LCT/" class="md-nav__link">
+      <a href="../../DS/LCT/" class="md-nav__link">
         动态树
       </a>
     </li>
@@ -1189,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/LTT/" class="md-nav__link">
+      <a href="../../DS/LTT/" class="md-nav__link">
         可并堆
       </a>
     </li>
@@ -1203,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../DS/KDT/" class="md-nav__link">
+      <a href="../../DS/KDT/" class="md-nav__link">
         K-D tree
       </a>
     </li>
@@ -1247,13 +1245,13 @@
                 
                   
 
-  <a href="https://github.com/WrongAnswer90/WrongAnswer90.github.io/oldblogs/edit/main/docs/Math/numbertheory/millerrabin.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/WrongAnswer90/WrongAnswer90.github.io/oldblogs/edit/main/docs/String/PAM.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Miller-Rabin</h1>
+  <h1>回文自动机</h1>
 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1272,24 +1270,34 @@
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">chk</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">500010</span><span class="p">];</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">PAM</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">||</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">u</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="n">u</span><span class="o">/=</span><span class="mi">2</span><span class="p">,</span><span class="o">++</span><span class="n">t</span><span class="p">;</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">v</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">,</span><span class="n">lst</span><span class="p">,</span><span class="n">L</span><span class="p">;</span>
+<span class="w">        </span><span class="k">struct</span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">fa</span><span class="p">,</span><span class="n">ch</span><span class="p">[</span><span class="mi">26</span><span class="p">];}</span><span class="n">t</span><span class="p">[</span><span class="mi">1000010</span><span class="p">];</span>
+<span class="w">        </span><span class="n">PAM</span><span class="p">(){</span><span class="n">cnt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">fa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">len</span><span class="o">=</span><span class="mi">-1</span><span class="p">;}</span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">newnode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="n">t</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">].</span><span class="n">len</span><span class="o">=</span><span class="n">x</span><span class="p">;</span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="p">;}</span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">len</span><span class="mi">-1</span><span class="p">])</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">fa</span><span class="p">;</span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;}</span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">ins</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="mi">-1</span><span class="p">),</span><span class="n">v</span><span class="o">=</span><span class="n">power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="o">&lt;</span><span class="n">t</span><span class="p">;</span><span class="o">++</span><span class="n">s</span><span class="p">)</span>
+<span class="w">            </span><span class="o">++</span><span class="n">L</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="n">get</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span><span class="n">nw</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">ch</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="o">==</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
-<span class="w">                </span><span class="n">v</span><span class="o">=</span><span class="n">mul</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">                </span><span class="n">nw</span><span class="o">=</span><span class="n">newnode</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">t</span><span class="p">[</span><span class="n">nw</span><span class="p">].</span><span class="n">fa</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">fa</span><span class="p">)].</span><span class="n">ch</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="w">                </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">ch</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="n">nw</span><span class="p">;</span>
+<span class="w">                </span><span class="n">t</span><span class="p">[</span><span class="n">nw</span><span class="p">].</span><span class="n">val</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="n">nw</span><span class="p">].</span><span class="n">fa</span><span class="p">].</span><span class="n">val</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">==</span><span class="n">t</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">nw</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">ch</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="w">            </span><span class="n">lst</span><span class="o">=</span><span class="n">nw</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="n">t</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1316,7 +1324,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../gcd/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 最大公约数" rel="prev">
+        <a href="../ACAM/" class="md-footer__link md-footer__link--prev" aria-label="上一页: AC 自动机" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1325,20 +1333,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              最大公约数
+              AC 自动机
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pollardrho/" class="md-footer__link md-footer__link--next" aria-label="下一页: Pollard-Rho" rel="next">
+        <a href="../../Graph/prufer/" class="md-footer__link md-footer__link--next" aria-label="下一页: prufer 序" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Pollard-Rho
+              prufer 序
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1392,16 +1400,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
-        <script src="../../../static/js/math-csr.js?math-csr"></script>
+        <script src="../../static/js/math-csr.js?math-csr"></script>
       
-        <script src="../../../assets/vendor/mathjax/es5/tex-mml-chtml.js?math-csr"></script>
+        <script src="../../assets/vendor/mathjax/es5/tex-mml-chtml.js?math-csr"></script>
       
-        <script src="../../../search/main.js"></script>
+        <script src="../../search/main.js"></script>
       
     
     

@@ -865,6 +865,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../String/PAM/" class="md-nav__link">
+        回文自动机
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1266,34 +1280,34 @@
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">,</span><span class="n">ch</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">val</span><span class="p">,</span><span class="n">siz</span><span class="p">,</span><span class="n">sum</span><span class="p">;</span><span class="kt">bool</span><span class="w"> </span><span class="n">tag</span><span class="p">;}</span><span class="n">spl</span><span class="p">[</span><span class="mi">1000001</span><span class="p">];</span>
-<span class="cp">#define ls(x) (spl[x].ch[0])</span>
-<span class="cp">#define rs(x) (spl[x].ch[1])</span>
-<span class="cp">#define fa(x) (spl[x].fa)</span>
-<span class="cp">#define ident(x,f) (rs(f)==x)</span>
-<span class="cp">#define connect(x,f,s) (spl[fa(x)=f].ch[s]=x)</span>
-<span class="cp">#define update(x) (spl[x].siz=spl[ls(x)].siz+spl[rs(x)].siz+1,spl[x].sum=spl[ls(x)].sum^spl[rs(x)].sum^spl[x].val)</span>
-<span class="cp">#define down(x) (swap(ls(x),rs(x)),spl[x].tag^=1)</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">spread</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">spl</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">tag</span><span class="p">)</span><span class="n">down</span><span class="p">(</span><span class="n">ls</span><span class="p">(</span><span class="n">k</span><span class="p">)),</span><span class="n">down</span><span class="p">(</span><span class="n">rs</span><span class="p">(</span><span class="n">k</span><span class="p">));</span>
-<span class="w">    </span><span class="n">spl</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">tag</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">ff</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="n">s</span><span class="o">=</span><span class="n">ident</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">);</span>
-<span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">spl</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">ch</span><span class="p">[</span><span class="n">s</span><span class="o">^</span><span class="mi">1</span><span class="p">],</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="p">),</span><span class="n">connecf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ff</span><span class="p">,</span><span class="n">ident</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">ff</span><span class="p">));</span>
-<span class="w">    </span><span class="n">connect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="o">^</span><span class="mi">1</span><span class="p">),</span><span class="n">update</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">splaying</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">struct</span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">,</span><span class="n">ch</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">val</span><span class="p">,</span><span class="n">siz</span><span class="p">,</span><span class="n">sum</span><span class="p">;</span><span class="kt">bool</span><span class="w"> </span><span class="n">tag</span><span class="p">;}</span><span class="n">spl</span><span class="p">[</span><span class="mi">1000001</span><span class="p">];</span>
+<span class="w">    </span><span class="cp">#define ls(x) (spl[x].ch[0])</span>
+<span class="w">    </span><span class="cp">#define rs(x) (spl[x].ch[1])</span>
+<span class="w">    </span><span class="cp">#define fa(x) (spl[x].fa)</span>
+<span class="w">    </span><span class="cp">#define ident(x,f) (rs(f)==x)</span>
+<span class="w">    </span><span class="cp">#define connect(x,f,s) (spl[fa(x)=f].ch[s]=x)</span>
+<span class="w">    </span><span class="cp">#define update(x) (spl[x].siz=spl[ls(x)].siz+spl[rs(x)].siz+1,spl[x].sum=spl[ls(x)].sum^spl[rs(x)].sum^spl[x].val)</span>
+<span class="w">    </span><span class="cp">#define down(x) (swap(ls(x),rs(x)),spl[x].tag^=1)</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">spread</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">ff</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">))(</span><span class="n">ident</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span><span class="o">^</span><span class="n">ident</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">ff</span><span class="p">))</span><span class="o">?</span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">rotate</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
-<span class="w">        </span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">spl</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">tag</span><span class="p">)</span><span class="n">down</span><span class="p">(</span><span class="n">ls</span><span class="p">(</span><span class="n">k</span><span class="p">)),</span><span class="n">down</span><span class="p">(</span><span class="n">rs</span><span class="p">(</span><span class="n">k</span><span class="p">));</span>
+<span class="w">        </span><span class="n">spl</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">tag</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">ff</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="n">s</span><span class="o">=</span><span class="n">ident</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">);</span>
+<span class="w">        </span><span class="n">connect</span><span class="p">(</span><span class="n">spl</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">ch</span><span class="p">[</span><span class="n">s</span><span class="o">^</span><span class="mi">1</span><span class="p">],</span><span class="n">f</span><span class="p">,</span><span class="n">s</span><span class="p">),</span><span class="n">connecf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ff</span><span class="p">,</span><span class="n">ident</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">ff</span><span class="p">));</span>
+<span class="w">        </span><span class="n">connect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="o">^</span><span class="mi">1</span><span class="p">),</span><span class="n">update</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">splaying</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">ff</span><span class="o">=</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">fa</span><span class="p">(</span><span class="n">f</span><span class="p">))(</span><span class="n">ident</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span><span class="o">^</span><span class="n">ident</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">ff</span><span class="p">))</span><span class="o">?</span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">rotate</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="w">            </span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
