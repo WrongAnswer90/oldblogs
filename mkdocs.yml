@@ -126,6 +126,7 @@ nav:
     - 后缀自动机: String/SAM.md
     - 广义后缀自动机: String/GSAM.md
     - AC 自动机: String/ACAM.md
+    - 回文自动机: String/PAM.md
   - 图论:
     - prufer 序: Graph/prufer.md
     - 树链剖分: Graph/HLD.md
