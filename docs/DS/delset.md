@@ -7,6 +7,6 @@
 		void push(int x){st[++top]=x;}
 		void erase(int x){++t[x];}
 		void upd(){while(top&&t[st[top]])--t[st[top--]];}
-		int get(){return st[top];}
+		int get(){return upd(),st[top];}
 	};
 ```
