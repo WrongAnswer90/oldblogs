@@ -50,3 +50,32 @@
         }
     };
 ```
+
+```cpp
+	namespace Segment
+	{
+		int cnt,tot,root;
+		pii b[200010];
+		struct{int ls,rs,i;}t[200010];
+		#define ls(x) t[x].ls
+		#define rs(x) t[x].rs
+		inline int get(int i,int x){return x*b[i].fi+b[i].se;}
+		void modify(int&p,int L,int R,int i)
+		{
+			if(!p)return t[p=++tot]={0,0,i},void();
+			int mid=(L+R)>>1;
+			if(get(i,mid)>get(t[p].i,mid))swap(i,t[p].i);
+			if(get(i,L)>get(t[p].i,L))modify(ls(p),L,mid,i);
+			if(get(i,R)>get(t[p].i,R))modify(rs(p),mid+1,R,i);
+		}
+		int ask(int p,int L,int R,int x)
+		{
+			if(!p)return -INF;
+			int mid=(L+R)>>1,v=get(t[p].i,x);
+			if(x<=mid)return max(v,ask(ls(p),L,mid,x));
+			return max(v,ask(rs(p),mid+1,R,x));
+		}
+		void clr(){root=cnt=tot=0;}
+	}
+	using namespace Segment;
+```

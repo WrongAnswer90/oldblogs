@@ -437,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Math/Poly/poly/" class="md-nav__link">
+      <a href="../../Math/Poly/poly.md" class="md-nav__link">
         多项式
       </a>
     </li>
@@ -451,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Math/Poly/interpolation/" class="md-nav__link">
+      <a href="../../Math/Poly/interpolation.md" class="md-nav__link">
         拉格朗日插值
       </a>
     </li>
@@ -465,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Math/Poly/FWT/" class="md-nav__link">
+      <a href="../../Math/Poly/FWT.md" class="md-nav__link">
         集合幂级数
       </a>
     </li>
@@ -1270,7 +1270,7 @@
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="n">st</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;}</span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="o">++</span><span class="n">t</span><span class="p">[</span><span class="n">x</span><span class="p">];}</span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">upd</span><span class="p">(){</span><span class="k">while</span><span class="p">(</span><span class="n">top</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">]])</span><span class="o">--</span><span class="n">t</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">]];}</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">];}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">upd</span><span class="p">(),</span><span class="n">st</span><span class="p">[</span><span class="n">top</span><span class="p">];}</span>
 <span class="w">    </span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 
