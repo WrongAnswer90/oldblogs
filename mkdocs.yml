@@ -101,9 +101,9 @@ nav:
   - 数学:
     - 组合数预处理: Math/fr&inv.md
     - 多项式:
-      - 多项式: Math/Poly/poly.md
-      - 拉格朗日插值: Math/Poly/interpolation.md
-      - 集合幂级数: Math/Poly/FWT.md
+      - 多项式: Math/poly/poly.md
+      - 拉格朗日插值: Math/poly/interpolation.md
+      - 集合幂级数: Math/poly/FWT.md
     - 数论:
       - Lucas 定理: Math/numbertheory/lucas.md
       - 最大公约数: Math/numbertheory/gcd.md
