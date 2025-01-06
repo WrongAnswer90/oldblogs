@@ -1,87 +1,132 @@
-```cpp
-    inline void AND(vector<int>&ve,int opt=1)
-    {
-        int n=ve.size();
-        if(opt==1)
-        for(int k=2;k<=n;k<<=1)
-        {
-            for(int i=0;i<n;i+=k)
-            {
-                for(int j=i;j<i+(k>>1);++j)
-                Madd(ve[j],ve[j+(k>>1)]);
-            }
-        }
-        else
-        for(int k=2;k<=n;k<<=1)
-        {
-            for(int i=0;i<n;i+=k)
-            {
-                for(int j=i;j<i+(k>>1);++j)
-                Mdel(ve[j],ve[j+(k>>1)]);
-            }
-        }
-    }
-    inline void OR(vector<int>&ve,int opt=1)
-    {
-        int n=ve.size();
-        if(opt==1)
-        for(int k=2;k<=n;k<<=1)
-        {
-            for(int i=0;i<n;i+=k)
-            {
-                for(int j=i;j<i+(k>>1);++j)
-                Madd(ve[j+(k>>1)],ve[j]);
-            }
-        }
-        else
-        for(int k=2;k<=n;k<<=1)
-        {
-            for(int i=0;i<n;i+=k)
-            {
-                for(int j=i;j<i+(k>>1);++j)
-                Mdel(ve[j+(k>>1)],ve[j]);
-            }
-        }
-    }
-    inline void XOR(vector<int>&ve,int opt=1)
-    {
-        int n=ve.size();
-        for(int k=2;k<=n;k<<=1)
-        {
-            for(int i=0;i<n;i+=k)
-            {
-                for(int j=i;j<i+(k>>1);++j)
-                {
-                    Madd(ve[j],ve[j+(k>>1)]);
-                    ve[j+(k>>1)]=Cdel(ve[j],ve[j+(k>>1)],ve[j+(k>>1)]);
-                }
-            }
-        }
-        int tmp=power(inv2,__lg(n));
-        if(opt==-1)for(int i=0;i<n;++i)Mmul(ve[i],tmp);
-    }
-    inline vi MUL(vi a,vi b)
-    {
-        int N=a.size(),n=__lg(N);static vi c,A[21],B[21],C[21];
-        c.resize(N);
-        for(int i=0;i<=n;++i)
-        {
-            A[i].clear(),B[i].clear();
-            A[i].resize(N),B[i].resize(N),C[i].resize(N);
-        }
-        for(int i=0;i<N;++i)A[__builtin_popcount(i)][i]=a[i];
-        for(int i=0;i<N;++i)B[__builtin_popcount(i)][i]=b[i];
-        for(int i=0;i<=n;++i)OR(A[i]),OR(B[i]);
-        for(int i=0;i<=n;++i)
-        {
-            for(int j=0;j+i<=n;++j)
-            {
-                for(int k=0;k<N;++k)
-                Madd(C[i+j][k],Cmul(A[i][k],B[j][k]));
-            }
-        }
-        for(int i=0;i<=n;++i)OR(C[i],-1);
-        for(int i=0;i<N;++i)c[i]=C[__builtin_popcount(i)][i];
-        return c;
-    }
+```
+	#define count(i) __builtin_popcount(i)
+	inline void OR(vi&F,int opt)
+	{
+		int n=F.size();
+		if(opt==1)for(int i=1;i<n;++i)
+		for(int j=0;j<n;j+=i<<1)for(int k=j;k<j+i;++k)
+		Madd(F[k+i],F[k]);
+		else for(int i=1;i<n;++i)
+		for(int j=0;j<n;j+=i<<1)for(int k=j;k<j+i;++k)
+		Mdel(F[k+i],F[k]);
+	}
+	inline void AND(vi&F,int opt)
+	{
+		int n=F.size();
+		if(opt==1)for(int i=1;i<n;++i)
+		for(int j=0;j<n;j+=i<<1)for(int k=j;k<j+i;++k)
+		Madd(F[k],F[k+i]);
+		else for(int i=1;i<n;++i)
+		for(int j=0;j<n;j+=i<<1)for(int k=j;k<j+i;++k)
+		Mdel(F[k],F[k+i]);
+	}
+	inline void XOR(vi&F,int opt)
+	{
+        int n=F.size(),x,y;
+        for(int k=1;k<n;k<<=1)for(int i=0;i<n;i+=k<<1)
+        for(int j=i;j<i+k;++j)x=F[j],y=F[j+k],F[j]=Cadd(x,y),F[j+k]=Cdel(x,y);
+        if(opt==-1){for(int i=0,t=power(n,MOD-2);i<n;++i)Mmul(F[i],t);}
+	}
+	inline vi OR(vi&F,vi&G)
+	{
+		assert(F.size()==G.size());
+		OR(F,1),OR(G,1);
+		vi H(F.size());
+		for(int i=0;i<(int)F.size();++i)H[i]=Cmul(F[i],G[i]);
+		return OR(H,-1),H;
+	}
+	inline vi AND(vi&F,vi&G)
+	{
+		assert(F.size()==G.size());
+		AND(F,1),AND(G,1);
+		vi H(F.size());
+		for(int i=0;i<(int)F.size();++i)H[i]=Cmul(F[i],G[i]);
+		return AND(H,-1),H;
+	}
+	inline vi XOR(vi&F,vi&G)
+	{
+		assert(F.size()==G.size());
+		XOR(F,1),XOR(G,1);
+		vi H(F.size());
+		for(int i=0;i<(int)F.size();++i)H[i]=Cmul(F[i],G[i]);
+		return XOR(H,-1),H;
+	}
+	inline vi MUL(vi&F,vi&G)
+	{
+		assert(F.size()==G.size());
+		static vi X[21],Y[21],Z[21],H;
+		int n=F.size(),m=__lg(n);
+		for(int i=0;i<=m;++i)X[i]=vi(n),Y[i]=vi(n),Z[i]=vi(n);
+		for(int i=0;i<n;++i)X[count(i)][i]=F[i];
+		for(int i=0;i<n;++i)Y[count(i)][i]=G[i];
+		for(int i=0;i<=m;++i)OR(X[i],1),OR(Y[i],1);
+		for(int x=0;x<=m;++x)for(int y=0;x+y<=m;++y)
+		for(int i=0;i<n;++i)Madd(Z[x+y][i],Cmul(X[x][i],Y[y][i]));
+		for(int i=0;i<=m;++i)OR(Z[i],-1);
+		H.resize(n);for(int i=0;i<n;++i)H[i]=Z[count(i)][i];
+		return H;
+	}
+	inline vi INV(vi&F)
+	{
+		int n=F.size(),m=__lg(n);
+		static vi X[21],Y[21],G;
+		for(int i=0;i<=m;++i)X[i]=vi(n),Y[i]=vi(n);
+		for(int i=0;i<n;++i)X[count(i)][i]=F[i];
+		for(int i=0;i<=m;++i)OR(X[i],1);
+		for(int i=0;i<n;++i)
+		{
+			Y[0][i]=power(X[0][i],MOD-2);
+			for(int j=1;j<=m;++j)
+			{
+				for(int k=0;k<j;++k)Mdel(Y[j][i],Cmul(Y[k][i],X[j-k][i]));
+				Mmul(Y[j][i],Y[0][i]);
+			}
+		}
+		for(int i=0;i<=m;++i)OR(Y[i],-1);
+		G.resize(n);for(int i=0;i<n;++i)G[i]=Y[count(i)][i];
+		return G;
+	}
+	inline vi LN(vi&F)
+	{
+		int n=F.size(),m=__lg(n),iv[21];
+		static vi X[21],Y[21],G;
+		for(int i=0;i<=m;++i)X[i]=vi(n),Y[i]=vi(n),iv[i]=power(i,MOD-2);
+		for(int i=0;i<n;++i)X[count(i)][i]=F[i];
+		for(int i=0;i<=m;++i)OR(X[i],1);
+		for(int i=0;i<n;++i)
+		{
+			Y[0][i]=power(X[0][i],MOD-2);
+			for(int j=1;j<=m;++j)
+			{
+				for(int k=0;k<j;++k)Mdel(Y[j][i],Cmul(Y[k][i],X[j-k][i]));
+				Mmul(Y[j][i],Y[0][i]);
+			}
+			for(int j=m;j>=1;--j)Y[j][i]=Cmul(iv[j],Y[j-1][i]);
+			Y[0][i]=0;
+		}
+		for(int i=0;i<=m;++i)OR(Y[i],-1);
+		G.resize(n);for(int i=0;i<n;++i)G[i]=Y[count(i)][i];
+		return G;
+	}
+	inline vi EXP(vi&F)
+	{
+		int n=F.size(),m=__lg(n),iv[21];
+		static vi X[21],Y[21],G;
+		for(int i=0;i<=m;++i)X[i]=vi(n),Y[i]=vi(n),iv[i]=power(i,MOD-2);
+		for(int i=0;i<n;++i)X[count(i)][i]=F[i];
+		for(int i=0;i<=m;++i)OR(X[i],1);
+		for(int i=0;i<n;++i)
+		{
+			Y[0][i]=1;
+			for(int j=0;j<m;++j)
+			{
+				for(int k=0;k<=j;++k)
+				Madd(Y[j+1][i],Cmul(X[k+1],k+1,Y[j-k][i]));
+				Mmul(Y[j+1][i],iv[j+1]);
+			}
+		}
+		for(int i=0;i<=m;++i)OR(Y[i],-1);
+		G.resize(n);for(int i=0;i<n;++i)G[i]=Y[count(i)][i];
+		return G;
+	}
 ```
