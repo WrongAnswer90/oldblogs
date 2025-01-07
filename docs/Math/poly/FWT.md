@@ -1,4 +1,4 @@
-```
+```cpp
 	#define count(i) __builtin_popcount(i)
 	inline void OR(vi&F,int opt)
 	{
