@@ -3,20 +3,11 @@
     {
         inline vi fix(vi A,int n){return A.resize(n),A;}
         const int MAXN=2000000;
-        int Shape,VBL,Invn[MAXN],R[MAXN<<1],Prt[MAXN<<1],P0[50010],P1[50010];
-        inline void init()
-        {
-            P0[0]=P1[0]=1,VBL=ceil(sqrt(MOD)),Invn[0]=1;
-            for(int i=1;i<MAXN;++i)Invn[i]=Cmul(Invn[i-1],i);
-            int tmp=power(Invn[MAXN-1],MOD-2);
-            for(int i=MAXN-1;i>=1;--i)Invn[i]=Cmul(tmp,Invn[i-1]),Mmul(tmp,i);
-            for(int i=1;i<=VBL;++i)P0[i]=Cmul(P0[i-1],Root);
-            for(int i=1;i<=VBL;++i)P1[i]=Cmul(P1[i-1],P0[VBL]);
-        }
-        inline int powerr(int x){return Cmul(P0[x%VBL],P1[x/VBL]);}
+        int Shape,R[MAXN<<1],Prt[MAXN<<1];
+        inline int powerr(int x){return power(Root,x);}
+        ull B[MAXN<<1];
         inline void NTT(vi&A,int n,int opt)
         {
-            static ull B[MAXN<<1],iv;
             A.resize(n);
             for(int i=0;i<n;++i)B[i]=A[R[i]];
             for(int mid=1;mid<n;mid<<=1)
@@ -33,7 +24,7 @@
             if(opt==1)for(int i=0;i<n;++i)A[i]=B[i]%MOD;
             else
             {
-                reverse(B+1,B+n),iv=power(n,MOD-2);
+                reverse(B+1,B+n);int iv=power(n,MOD-2);
                 for(int i=0;i<n;++i)A[i]=Cmul(B[i]%MOD,iv);
             }
         }
@@ -51,15 +42,13 @@
         }
         inline vi der(vi A)
         {
-            int N=A.size();
-            vi B(N-1);
+            int N=A.size();vi B(N-1);
             for(int i=0;i<N-1;++i)B[i]=Cmul(i+1,A[i+1]);
             return B;
         }
         inline vi inte(vi A)
         {
-            int N=A.size();
-            vi B(N+1);
+            int N=A.size();vi B(N+1);
             for(int i=1;i<=N;++i)B[i]=Cmul(A[i-1],power(i,MOD-2));
             return B;
         }
@@ -74,8 +63,8 @@
         inline vi inv(vi A)
         {
             static vi B,TB,C;
-            B={(int)power(A[0],MOD-2)};
             int N=A.size();
+            B={(int)power(A[0],MOD-2)};
             for(int n=1;n<N;n<<=1)
             {
                 TB=B,C.clear(),C.resize(n<<1);
@@ -146,12 +135,9 @@
         {
             int n=A.size(),m=B.size();
             static vi C,D;
-            reverse(A.begin(),A.end());
-            reverse(B.begin(),B.end());
+            reverse(all(A)),reverse(all(B));
             D=FFT(A,inv(fix(B,n-m+1))),D.resize(n-m+1);
-            reverse(D.begin(),D.end());
-            reverse(A.begin(),A.end());
-            reverse(B.begin(),B.end());
+            reverse(all(D)),reverse(all(A)),reverse(all(B));
             C=FFT(B,D);
             for(int i=0;i<m;++i)C[i]=Cdel(A[i],C[i]);
             return mp(D,fix(C,m-1));

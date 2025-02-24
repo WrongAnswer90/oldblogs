@@ -147,3 +147,5 @@ nav:
     - 动态树: DS/LCT.md
     - 可并堆: DS/LTT.md
     - K-D tree: DS/KDT.md
+  - 其他:
+    - SMAWK: Oth/SMAWK.md
