@@ -289,6 +289,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Oth/SMAWK/" class="md-tabs__link">
+        其他
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1217,6 +1233,54 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          其他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="其他" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Oth/SMAWK/" class="md-nav__link">
+        SMAWK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1560,38 +1624,15 @@
 <span class="normal">303</span>
 <span class="normal">304</span>
 <span class="normal">305</span>
-<span class="normal">306</span>
-<span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span>
-<span class="normal">312</span>
-<span class="normal">313</span>
-<span class="normal">314</span>
-<span class="normal">315</span>
-<span class="normal">316</span>
-<span class="normal">317</span>
-<span class="normal">318</span>
-<span class="normal">319</span>
-<span class="normal">320</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Poly</span>
+<span class="normal">306</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Poly</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="nf">fix</span><span class="p">(</span><span class="n">vi</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">A</span><span class="p">;}</span>
 <span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXN</span><span class="o">=</span><span class="mi">2000000</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Shape</span><span class="p">,</span><span class="n">VBL</span><span class="p">,</span><span class="n">Invn</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">R</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">],</span><span class="n">Prt</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">],</span><span class="n">P0</span><span class="p">[</span><span class="mi">50010</span><span class="p">],</span><span class="n">P1</span><span class="p">[</span><span class="mi">50010</span><span class="p">];</span>
-<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">P0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">P1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">VBL</span><span class="o">=</span><span class="n">ceil</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MOD</span><span class="p">)),</span><span class="n">Invn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">MAXN</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">Invn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">Invn</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">],</span><span class="n">i</span><span class="p">);</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">power</span><span class="p">(</span><span class="n">Invn</span><span class="p">[</span><span class="n">MAXN</span><span class="mi">-1</span><span class="p">],</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">);</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">MAXN</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="n">Invn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">Invn</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]),</span><span class="n">Mmul</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">VBL</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">P0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">P0</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">],</span><span class="n">Root</span><span class="p">);</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">VBL</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">P1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">P1</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">],</span><span class="n">P0</span><span class="p">[</span><span class="n">VBL</span><span class="p">]);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">powerr</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="n">Cmul</span><span class="p">(</span><span class="n">P0</span><span class="p">[</span><span class="n">x</span><span class="o">%</span><span class="n">VBL</span><span class="p">],</span><span class="n">P1</span><span class="p">[</span><span class="n">x</span><span class="o">/</span><span class="n">VBL</span><span class="p">]);}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Shape</span><span class="p">,</span><span class="n">R</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">],</span><span class="n">Prt</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">powerr</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">Root</span><span class="p">,</span><span class="n">x</span><span class="p">);}</span>
+<span class="w">        </span><span class="n">ull</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">];</span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">NTT</span><span class="p">(</span><span class="n">vi</span><span class="o">&amp;</span><span class="n">A</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">opt</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">static</span><span class="w"> </span><span class="n">ull</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">MAXN</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">],</span><span class="n">iv</span><span class="p">;</span>
 <span class="w">            </span><span class="n">A</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">mid</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">mid</span><span class="o">&lt;&lt;=</span><span class="mi">1</span><span class="p">)</span>
@@ -1608,7 +1649,7 @@
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">opt</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="n">MOD</span><span class="p">;</span>
 <span class="w">            </span><span class="k">else</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="n">reverse</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="n">n</span><span class="p">),</span><span class="n">iv</span><span class="o">=</span><span class="n">power</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">reverse</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="o">+</span><span class="n">n</span><span class="p">);</span><span class="kt">int</span><span class="w"> </span><span class="n">iv</span><span class="o">=</span><span class="n">power</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">);</span>
 <span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="n">MOD</span><span class="p">,</span><span class="n">iv</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
@@ -1626,15 +1667,13 @@
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="nf">der</span><span class="p">(</span><span class="n">vi</span><span class="w"> </span><span class="n">A</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="w">            </span><span class="n">vi</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">vi</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="mi">-1</span><span class="p">);</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="mi">-1</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="nf">inte</span><span class="p">(</span><span class="n">vi</span><span class="w"> </span><span class="n">A</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="w">            </span><span class="n">vi</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">vi</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cmul</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">],</span><span class="n">power</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">));</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
@@ -1649,8 +1688,8 @@
 <span class="w">        </span><span class="kr">inline</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="nf">inv</span><span class="p">(</span><span class="n">vi</span><span class="w"> </span><span class="n">A</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="k">static</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="n">TB</span><span class="p">,</span><span class="n">C</span><span class="p">;</span>
-<span class="w">            </span><span class="n">B</span><span class="o">=</span><span class="p">{(</span><span class="kt">int</span><span class="p">)</span><span class="n">power</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">)};</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">            </span><span class="n">B</span><span class="o">=</span><span class="p">{(</span><span class="kt">int</span><span class="p">)</span><span class="n">power</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MOD</span><span class="mi">-2</span><span class="p">)};</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">n</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">n</span><span class="o">&lt;&lt;=</span><span class="mi">1</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="n">TB</span><span class="o">=</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">.</span><span class="n">clear</span><span class="p">(),</span><span class="n">C</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">);</span>
@@ -1721,12 +1760,9 @@
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="n">m</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <span class="w">            </span><span class="k">static</span><span class="w"> </span><span class="n">vi</span><span class="w"> </span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">;</span>
-<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">B</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">A</span><span class="p">)),</span><span class="n">reverse</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">B</span><span class="p">));</span>
 <span class="w">            </span><span class="n">D</span><span class="o">=</span><span class="n">FFT</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">inv</span><span class="p">(</span><span class="n">fix</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))),</span><span class="n">D</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">D</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">D</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">B</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">            </span><span class="n">reverse</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">D</span><span class="p">)),</span><span class="n">reverse</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">A</span><span class="p">)),</span><span class="n">reverse</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">B</span><span class="p">));</span>
 <span class="w">            </span><span class="n">C</span><span class="o">=</span><span class="n">FFT</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Cdel</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mp</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">fix</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">m</span><span class="mi">-1</span><span class="p">));</span>
