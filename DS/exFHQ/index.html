@@ -17,7 +17,7 @@
     
     
       
-        <title>可持久化平衡树 - My Blogs</title>
+        <title>可持久化平衡树 - Template</title>
       
     
     
@@ -81,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="My Blogs" class="md-header__button md-logo" aria-label="My Blogs" data-md-component="logo">
+    <a href="../.." title="Template" class="md-header__button md-logo" aria-label="Template" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -94,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Blogs
+            Template
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -326,13 +326,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="My Blogs" class="md-nav__button md-logo" aria-label="My Blogs" data-md-component="logo">
+    <a href="../.." title="Template" class="md-nav__button md-logo" aria-label="Template" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    My Blogs
+    Template
   </label>
   
     <div class="md-nav__source">
@@ -859,20 +859,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../String/GSAM/" class="md-nav__link">
-        广义后缀自动机
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../String/ACAM/" class="md-nav__link">
         AC 自动机
       </a>
@@ -1352,14 +1338,12 @@
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">siz</span><span class="p">,</span><span class="n">rd</span><span class="p">;</span><span class="kt">bool</span><span class="w"> </span><span class="n">tag</span><span class="p">;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="n">sum</span><span class="p">;}</span><span class="n">fhq</span><span class="p">[</span><span class="mi">20000001</span><span class="p">];</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">siz</span><span class="p">,</span><span class="n">rd</span><span class="p">;</span><span class="kt">bool</span><span class="w"> </span><span class="n">tag</span><span class="p">;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="n">sum</span><span class="p">;}</span><span class="n">fhq</span><span class="p">[</span><span class="mi">20000001</span><span class="p">];</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">root</span><span class="p">[</span><span class="mi">300001</span><span class="p">];</span>
 <span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">lastans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">siz</span><span class="o">=</span><span class="n">fhq</span><span class="p">[</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">siz</span><span class="o">+</span><span class="n">fhq</span><span class="p">[</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">r</span><span class="p">].</span><span class="n">siz</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">sum</span><span class="o">=</span><span class="n">fhq</span><span class="p">[</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">l</span><span class="p">].</span><span class="n">sum</span><span class="o">+</span><span class="n">fhq</span><span class="p">[</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">r</span><span class="p">].</span><span class="n">sum</span><span class="o">+</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">newnode</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">val</span><span class="p">){</span><span class="n">fhq</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">].</span><span class="n">val</span><span class="o">=</span><span class="n">val</span><span class="p">,</span><span class="n">fhq</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">siz</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">fhq</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">sum</span><span class="o">=</span><span class="n">val</span><span class="p">,</span><span class="n">fhq</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rd</span><span class="o">=</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">114514191</span><span class="p">;</span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="p">;}</span>
 <span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="n">fhq</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">fhq</span><span class="p">[</span><span class="n">x</span><span class="p">];</span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="p">;}</span>
