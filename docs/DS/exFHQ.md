@@ -5,7 +5,6 @@
 	inline void update(int x)
 	{
 		fhq[x].siz=fhq[fhq[x].l].siz+fhq[fhq[x].r].siz+1;
-		fhq[x].sum=fhq[fhq[x].l].sum+fhq[fhq[x].r].sum+fhq[x].val;
 	}
 	inline int newnode(long long val){fhq[++cnt].val=val,fhq[cnt].siz=1,fhq[cnt].sum=val,fhq[cnt].rd=rand()%114514191;return cnt;}
 	inline int copy(int x){fhq[++cnt]=fhq[x];return cnt;}

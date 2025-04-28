@@ -1,4 +1,4 @@
-﻿site_name: My Blogs
+﻿site_name: Template
 site_url: https://wronganswer90.github.io/oldblogs
 site_author: WrongAnswer90
 strict: false
@@ -124,7 +124,6 @@ nav:
     - manacher: String/manacher.md
     - 后缀数组: String/SA.md
     - 后缀自动机: String/SAM.md
-    - 广义后缀自动机: String/GSAM.md
     - AC 自动机: String/ACAM.md
     - 回文自动机: String/PAM.md
   - 图论:
